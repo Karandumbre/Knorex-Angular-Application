@@ -1,0 +1,34 @@
+<div style="width: 75%">
+  <div class="container">
+    Dropdown Option
+    <div class="row clearfix">
+      <div class="col-md-12 table-responsive">
+        <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+
+          <tbody *ngIf="showHtml">
+            <tr id='addr0' data-id="0" class="hidden" *ngFor="let item of countrydata.options;let i=index">
+              <td data-name="name">
+                <input type="text" name='countryName' placeholder='Country Name' class="form-control"
+                  value="{{item.label}}" />
+              </td>
+              <td data-name="mail">
+                <input type="text" name='countryCode' placeholder='Country Code' class="form-control"
+                  value="{{item.value}}" />
+              </td>
+              <td data-name="del">
+                <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'
+                  (click)="deleteData(i)"><span aria-hidden="true">×</span></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a id="add_row" class="btn btn-primary" (click)="addInputField()">Add Options</a>
+  </div>
+
+  <div class="row mt-2 extraButtons">
+    <a id="add_row" class="btn btn-primary float-right ml-2" (click)='exportToExcel()'>Export CSV</a>
+    <a id="add_row" class="btn btn-primary float-right ml-2" (click)="saveDetails()">Save</a>
+  </div>
+</div>

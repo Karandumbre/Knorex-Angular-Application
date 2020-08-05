@@ -1,0 +1,8 @@
+.extraButtons>a {
+  background: grey;
+  border: grey
+}
+
+.extraButtons {
+  display: block;
+}
